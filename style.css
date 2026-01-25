@@ -1,0 +1,503 @@
+/* Macintosh Classic Style */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    image-rendering: pixelated;
+}
+
+body.mac-style {
+    font-family: "Chicago", "Monaco", "Courier New", monospace;
+    background-color: #888888;
+    background-image: url('data:image/svg+xml;utf8,<svg width="4" height="4" xmlns="http://www.w3.org/2000/svg"><rect width="2" height="2" fill="%23666"/><rect x="2" y="2" width="2" height="2" fill="%23666"/></svg>');
+    color: #000;
+    line-height: 1.4;
+    min-height: 100vh;
+    padding: 20px;
+    font-size: 12px;
+}
+
+/* Статус бар */
+.status-bar {
+    background: linear-gradient(to bottom, #999 0%, #888 50%, #777 100%);
+    border: 2px solid;
+    border-top-color: #fff;
+    border-left-color: #fff;
+    border-right-color: #444;
+    border-bottom-color: #444;
+    padding: 4px 8px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.status-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.apple-logo {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.menu-item {
+    padding: 2px 6px;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.menu-item:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.time {
+    background-color: #000;
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+/* Основной контейнер */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Окна */
+.main-window {
+    background-color: #c0c0c0;
+    border: 2px solid;
+    border-top-color: #fff;
+    border-left-color: #fff;
+    border-right-color: #404040;
+    border-bottom-color: #404040;
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.3);
+}
+
+.window-header {
+    background: linear-gradient(to right, #000080, #1084d0);
+    color: white;
+    padding: 4px 8px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.window-controls {
+    display: flex;
+    gap: 4px;
+    margin-right: 8px;
+}
+
+.close-btn, .minimize-btn, .maximize-btn {
+    width: 12px;
+    height: 12px;
+    border: 1px solid;
+    border-top-color: #fff;
+    border-left-color: #fff;
+    border-right-color: #404040;
+    border-bottom-color: #404040;
+    cursor: pointer;
+}
+
+.close-btn { background-color: #ff0000; }
+.minimize-btn { background-color: #ffff00; }
+.maximize-btn { background-color: #00ff00; }
+
+/* Основное изображение */
+.main-image-container {
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    background-color: #c0c0c0;
+}
+
+.image-frame {
+    border: 2px solid;
+    border-top-color: #404040;
+    border-left-color: #404040;
+    border-right-color: #fff;
+    border-bottom-color: #fff;
+    padding: 8px;
+    background-color: #fff;
+    flex: 1;
+}
+
+.main-image {
+    width: 100%;
+    height: 400px;
+    object-fit: contain;
+    background-color: #fff;
+    border: 1px solid #888;
+    display: block;
+}
+
+.image-info {
+    width: 200px;
+    background-color: #fff;
+    border: 2px solid;
+    border-top-color: #404040;
+    border-left-color: #404040;
+    border-right-color: #fff;
+    border-bottom-color: #fff;
+    padding: 12px;
+}
+
+.info-line {
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.label {
+    font-weight: bold;
+    color: #000080;
+}
+
+.value {
+    color: #000;
+    font-family: "Monaco", monospace;
+    font-size: 11px;
+}
+
+/* Панель управления */
+.control-panel {
+    background-color: #c0c0c0;
+    padding: 12px 20px;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #404040;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.mac-btn {
+    background: linear-gradient(to bottom, #c0c0c0, #a0a0a0);
+    border: 2px solid;
+    border-top-color: #fff;
+    border-left-color: #fff;
+    border-right-color: #404040;
+    border-bottom-color: #404040;
+    padding: 6px 12px;
+    font-family: "Chicago", "Monaco", monospace;
+    font-size: 11px;
+    cursor: pointer;
+    color: #000;
+    min-width: 120px;
+    text-align: center;
+}
+
+.mac-btn:hover {
+    background: linear-gradient(to bottom, #d0d0d0, #b0b0b0);
+}
+
+.mac-btn:active {
+    border-top-color: #404040;
+    border-left-color: #404040;
+    border-right-color: #fff;
+    border-bottom-color: #fff;
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+}
+
+.volume-slider {
+    width: 100px;
+    height: 16px;
+    border: 2px solid;
+    border-top-color: #404040;
+    border-left-color: #404040;
+    border-right-color: #fff;
+    border-bottom-color: #fff;
+    background-color: #fff;
+    position: relative;
+}
+
+.volume-level {
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    bottom: 2px;
+    width: 70%;
+    background-color: #000080;
+}
+
+/* Окно галереи */
+.gallery-window {
+    margin: 20px;
+    border: 2px solid;
+    border-top-color: #fff;
+    border-left-color: #fff;
+    border-right-color: #404040;
+    border-bottom-color: #404040;
+    position: relative;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 8px;
+    padding: 12px;
+    background-color: #c0c0c0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.gallery-item {
+    border: 2px solid;
+    border-top-color: #404040;
+    border-left-color: #404040;
+    border-right-color: #fff;
+    border-bottom-color: #fff;
+    padding: 4px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.gallery-item:hover {
+    border-color: #000080;
+    background-color: #e0e0ff;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    display: block;
+}
+
+.scroll-bar {
+    position: absolute;
+    right: 2px;
+    top: 30px;
+    bottom: 2px;
+    width: 16px;
+    background-color: #c0c0c0;
+    border: 2px solid;
+    border-top-color: #fff;
+    border-left-color: #fff;
+    border-right-color: #404040;
+    border-bottom-color: #404040;
+}
+
+.scroll-thumb {
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    right: 2px;
+    height: 40px;
+    background-color: #808080;
+}
+
+/* Нижняя панель */
+.bottom-panel {
+    background-color: #c0c0c0;
+    padding: 12px 20px;
+    border-top: 2px solid #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.disk-drives {
+    display: flex;
+    gap: 20px;
+}
+
+.drive {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 8px;
+    background-color: #fff;
+    border: 2px solid;
+    border-top-color: #404040;
+    border-left-color: #404040;
+    border-right-color: #fff;
+    border-bottom-color: #fff;
+}
+
+.status-info {
+    display: flex;
+    gap: 20px;
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Диалоговое окно */
+.dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #c0c0c0;
+    border: 2px solid;
+    border-top-color: #fff;
+    border-left-color: #fff;
+    border-right-color: #404040;
+    border-bottom-color: #404040;
+    min-width: 300px;
+    box-shadow: 6px 6px 12px rgba(0,0,0,0.5);
+    z-index: 1000;
+    display: none;
+}
+
+.dialog-header {
+    background: linear-gradient(to right, #000080, #1084d0);
+    color: white;
+    padding: 8px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dialog-title {
+    font-weight: bold;
+}
+
+.dialog-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dialog-content {
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.dialog-icon {
+    font-size: 32px;
+    color: #000080;
+}
+
+.dialog-text {
+    flex: 1;
+}
+
+.dialog-text p {
+    margin-bottom: 8px;
+}
+
+.dialog-buttons {
+    padding: 12px;
+    text-align: center;
+    border-top: 2px solid #404040;
+}
+
+/* Подсказка */
+.help-text {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #ffffcc;
+    border: 2px solid;
+    border-top-color: #404040;
+    border-left-color: #404040;
+    border-right-color: #fff;
+    border-bottom-color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.help-icon {
+    font-size: 18px;
+    color: #000080;
+}
+
+/* Эффекты размытия */
+.blur-active .gallery-grid,
+.blur-active .gallery-window,
+.blur-active .control-panel,
+.blur-active .bottom-panel {
+    filter: blur(5px);
+    opacity: 0.7;
+}
+
+.blur-active .main-image-container {
+    filter: blur(2px);
+    opacity: 0.9;
+}
+
+/* Анимации */
+@keyframes crt-flicker {
+    0% { opacity: 0.95; }
+    5% { opacity: 1; }
+    10% { opacity: 0.98; }
+    15% { opacity: 1; }
+    100% { opacity: 1; }
+}
+
+body.mac-style {
+    animation: crt-flicker 5s infinite;
+}
+
+/* Полоса прокрутки для галереи */
+.gallery-grid::-webkit-scrollbar {
+    width: 16px;
+}
+
+.gallery-grid::-webkit-scrollbar-track {
+    background: #c0c0c0;
+    border: 2px solid;
+    border-top-color: #fff;
+    border-left-color: #fff;
+    border-right-color: #404040;
+    border-bottom-color: #404040;
+}
+
+.gallery-grid::-webkit-scrollbar-thumb {
+    background: #808080;
+    border: 2px solid;
+    border-top-color: #404040;
+    border-left-color: #404040;
+    border-right-color: #fff;
+    border-bottom-color: #fff;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .main-image-container {
+        flex-direction: column;
+    }
+    
+    .image-info {
+        width: 100%;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    }
+    
+    .control-panel {
+        flex-wrap: wrap;
+    }
+    
+    .volume-control {
+        margin-left: 0;
+    }
+}
